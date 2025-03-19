@@ -31,5 +31,5 @@ elif sobremesa == "torta":
 else:
     print("Torta não encontrada.")
 
-valor = float(sanduiche+bebida+sobremesa)
-print("Valor total do lanche: R$",valor)
+valor = round(float(sanduiche+bebida+sobremesa),2)
+print(f"Valor total do lanche: R${valor}")
