@@ -4,14 +4,15 @@ faltas = int(input("Digite quantas faltas você possui na empresa: "))
 filhos = int(input("Digite quantos filhos você possui: "))
 
 #Condição para obter salário de cada cargo
-if cargo == "gerente":
-    salario = 2000
-elif cargo == "supervisor":
-    salario = 900
-elif cargo == "servente":
-    salario = 300
-else:
-    print("Cargo não encontrado.")
+match cargo:
+    case "gerente":
+        salario = 2000
+    case "supervisor":
+        salario = 900
+    case "servente":
+        salario = 300
+    case _:
+        print("Cargo não encontrado.")
 
 #Cálculo das horas extras
 horaextcalc = (((salario)/240)*2)*horasext
@@ -32,6 +33,6 @@ inss = (proventos)*(10/100)
 descontos = (faltascalc+inss)
 
 #Salário Líquido
-salarioliq = round(float(proventos-descontos),2)
+salarioliq = round(float(proventos-descontos),3)
 
-print("Seu salário líquido é de: R$",salarioliq)
+print(f"Salário líquido: R${salarioliq}")
